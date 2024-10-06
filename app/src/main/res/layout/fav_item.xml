@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/edt_rounded">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/mpsmeal"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cr"
+        app:layout_constraintBottom_toTopOf="@id/ps_ingredients"
+        app:layout_constraintEnd_toStartOf="@id/ps_category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/rounded_square" />
+
+    <TextView
+        android:id="@+id/ps_meal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/brown"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/ps_category"
+        app:layout_constraintEnd_toEndOf="@id/ps_category"
+        app:layout_constraintStart_toStartOf="@+id/ps_category"
+        app:layout_constraintTop_toTopOf="@+id/mpsmeal"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="beef" />
+
+
+    <TextView
+        android:id="@+id/ps_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/orange"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/ps_country"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mpsmeal"
+        app:layout_constraintTop_toBottomOf="@+id/ps_meal"
+        tools:text="desert" />
+
+    <TextView
+        android:id="@+id/ps_country"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+
+        android:textColor="@color/yellow"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/mpsmeal"
+        app:layout_constraintEnd_toEndOf="@+id/ps_category"
+        app:layout_constraintStart_toStartOf="@+id/ps_category"
+        app:layout_constraintTop_toBottomOf="@+id/ps_category"
+        tools:text="egypt" />
+
+    <TextView
+        android:id="@+id/ps_ingredients"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mpsmeal"
+        tools:text="kmksdmkl" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
