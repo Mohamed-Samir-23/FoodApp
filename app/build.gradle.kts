@@ -72,4 +72,22 @@ dependencies {
 
     //youtube player
     implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.0.0")
+
+    // TFLite library for Android
+    implementation ("org.tensorflow:tensorflow-lite:2.9.0")
+
+// TFLite support for GPU acceleration (optional but recommended for faster inference)
+    implementation ("org.tensorflow:tensorflow-lite-gpu:2.9.0")
+
+// OpenCV for image pre-processing (optional)
+    //implementation ("org.opencv:opencv-android:4.5.3")
+
+// CameraX for capturing frames from the camera (optional)
+//    implementation ("androidx.camera:camera-core:1.0.2")
+//    implementation ("androidx.camera:camera-camera2:1.0.2")
+//    implementation ("androidx.camera:camera-lifecycle:1.0.2")
+//    implementation ("androidx.camera:camera-view:1.0.2")
+
+// For managing threading and background tasks
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
 }

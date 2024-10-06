@@ -15,7 +15,8 @@ public class SharedHelper {
     }
 
     private SharedHelper(Context context) {
-        shared = context.getSharedPreferences("local_shared", Context.MODE_PRIVATE);//within the whole project, and i should get it by its name
+        shared = context.getSharedPreferences("local_shared", Context.MODE_PRIVATE);
+        //within the whole project, and i should get it by its name
     }
 
     public void store(SharedKeys key, String value) {

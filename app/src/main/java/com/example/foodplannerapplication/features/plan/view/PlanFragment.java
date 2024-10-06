@@ -1,5 +1,6 @@
 package com.example.foodplannerapplication.features.plan.view;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -43,7 +44,7 @@ public class PlanFragment extends Fragment implements PlanView {
     private PlanPagerAdapter adapter;
 
     private ArrayList<Pair<String, Integer>> days;
-
+    private MediaPlayer mediaPlayer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,10 @@ public class PlanFragment extends Fragment implements PlanView {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mediaPlayer = MediaPlayer.create(getContext(), R.raw.splan);
+        if (mediaPlayer != null) {
+            mediaPlayer.start();
+        }
         return inflater.inflate(R.layout.fragment_plan, container, false);
     }
 

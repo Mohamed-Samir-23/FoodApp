@@ -164,10 +164,11 @@ public class FilterDialog extends DialogFragment implements FilterView {
 
     @Override
     public void onGetCountries(Observable<List<Country>> observable) {
+        // Transform the list of categories into a stream of individual Category objects
         observable.flatMap(countries -> Observable.fromIterable(countries))
-                .map(country -> country.getStrArea())
+                .map(country -> country.getStrArea())    // Map each Category object to its name (string representation)
                 .observeOn(AndroidSchedulers.mainThread())
-                .map(s -> createChip(s))
+                .map(s -> createChip(s))    // For each category name, create a Chip (UI component)
                 .subscribe(chip -> {
                     if (country != null && chip.getText().toString().trim().equals(country)) {
                         chip.setChecked(true);

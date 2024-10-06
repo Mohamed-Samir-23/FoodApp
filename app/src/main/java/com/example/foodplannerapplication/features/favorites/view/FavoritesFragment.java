@@ -1,5 +1,6 @@
 package com.example.foodplannerapplication.features.favorites.view;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -45,6 +46,7 @@ public class FavoritesFragment extends Fragment implements FavoritesView, Favori
 
     private int position;
 
+    private MediaPlayer mediaPlayer;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +77,10 @@ public class FavoritesFragment extends Fragment implements FavoritesView, Favori
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mediaPlayer = MediaPlayer.create(getContext(), R.raw.sfavorite);
+        if (mediaPlayer != null) {
+            mediaPlayer.start();
+        }
         return inflater.inflate(R.layout.fragment_favorites, container, false);
     }
 

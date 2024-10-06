@@ -19,11 +19,13 @@ public interface HomeView {
     void onGetRandomMeal(Observable<Meal> observable);
 
     void onGetCategories(Observable<List<Category>> observable);
+
     void onGetCountries(Observable<List<Country>> observable);
 
     void onGetSearchResult(Observable<List<Meal>> observable);
 
     void onFavMealInserted(Completable completable);
+
     void onFavMealDeleted(Completable completable);
 
     void onPlannedMealInserted(Completable completable);

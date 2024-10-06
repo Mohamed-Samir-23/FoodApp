@@ -1,6 +1,7 @@
 package com.example.foodplannerapplication.features.home.view;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -72,6 +73,9 @@ public class HomeFragment extends Fragment implements HomeView, OnFilterClick, C
 
     private List<Meal> favorites;
 
+    private MediaPlayer mediaPlayer;
+
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -103,6 +107,10 @@ public class HomeFragment extends Fragment implements HomeView, OnFilterClick, C
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView");
+        mediaPlayer = MediaPlayer.create(getContext(), R.raw.shome);
+        if (mediaPlayer != null) {
+            mediaPlayer.start();
+        }
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 

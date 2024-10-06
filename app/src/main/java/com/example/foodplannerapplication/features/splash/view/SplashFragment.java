@@ -1,5 +1,6 @@
 package com.example.foodplannerapplication.features.splash.view;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -31,6 +32,7 @@ public class SplashFragment extends Fragment implements SplashView {
 
     public final static String TAG = "SplashFragment";
     private SplashPresenter presenter;
+    private MediaPlayer mediaPlayer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,10 @@ public class SplashFragment extends Fragment implements SplashView {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mediaPlayer = MediaPlayer.create(getContext(), R.raw.welcome);
+        if (mediaPlayer != null) {
+            mediaPlayer.start();
+        }
         return inflater.inflate(R.layout.fragment_splash, container, false);
     }
 
@@ -68,13 +74,17 @@ public class SplashFragment extends Fragment implements SplashView {
                 while (true)
                 {
                     if (isConnected()) {
+                        presenter.getCategories();
+                        presenter.getCountries();
+                        presenter.getIngredients();
                         break;
                     }
                 }
+
                 presenter.isDoneWork();
             }
 
-        }, 4000);
+        }, 8000);
     }
 
     @Override

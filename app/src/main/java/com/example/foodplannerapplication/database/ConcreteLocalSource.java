@@ -44,13 +44,13 @@ public class ConcreteLocalSource implements LocalSource {
     @Override
     public Completable insertPlannedMeal(PlannedMeal meal) {
         return planDAO.insertMeal(meal).subscribeOn(Schedulers.io());
-        //new Thread(()-> mealDAO.insertMeal(meal)).start();
+        //new Thread(()-> planDAO.insertMeal(meal)).start();
     }
 
     @Override
     public Completable deletePlannedMeal(PlannedMeal meal) {
         return planDAO.deleteMeal(meal).subscribeOn(Schedulers.io());
-        //new Thread(()-> mealDAO.deleteMeal(meal)).start();
+        //new Thread(()-> planDAO.deleteMeal(meal)).start();
     }
 
     @Override
